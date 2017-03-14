@@ -1,0 +1,119 @@
+% Author:
+% Hannes Leskelä, hleskela@kth.se
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Template created using the online editor overleaf.com
+
+\documentclass[12pt]{article}
+
+% This is the preamble, load any packages you're going to use here
+\usepackage{enumerate} % allows us to customize our lists
+\usepackage{pgfgantt} % for gantt chart
+\usepackage{geometry} % to change margins
+\usepackage{ragged2e} % provides \RaggedLeft
+\usepackage{hyperref} % provides \href
+
+
+\begin{document}
+
+\title{Specification and schedule
+}
+\author{Name Nameson, namnam@kth.se}
+\date{\today}
+
+\maketitle
+This is a template based on my own specification and schedule. For details on what to focus on when writing, please refer to the following page:\\
+\href{https://www.kth.se/social/group/examensarbete-vid-cs/page/specification-with-timetable/}{Specification on kth.se}
+\section*{Formalities}
+\begin{itemize}
+\item Preliminary title:
+\item CSC Supervisor:
+\item (If non-CSC principal, an external supervisor/company) Principal:
+\item (If non-CSC principal) Supervisor at principal's workplace:
+\end{itemize}
+
+\section*{Background \& Objective}
+\subsection*{Description of the area within which the degree project is being carried out}
+E.g. connection to research/development, state-of-the-art, scientific and/or societal interest.
+\subsection*{The principal's interest} 
+The background of the specific assignment to be conducted.
+\subsection*{Objective} 
+What is the desired outcome (from the principal's side and from the perspective of the degree project)
+\section*{Research Question \& Method}
+\subsection*{The question that will be examined}
+Formulated as an explicit and evaluable question.
+\subsection*{Specified problem definition}
+E.g. what does the assignment entail and what are the challenges involved?
+\subsection*{Examination method}
+Preliminary description of, for example, algorithms that will be tested, data that will be used.
+\subsection*{Expected scientific results}
+How is the work scientifically relevant and what is the hypothesis being tested? How is this hypothesis being tested?
+\section*{Evaluation \& News Value}
+\subsection*{Evaluation}
+How is it determined if the objective of the degree project has been fulfilled and if the question has been adequately answered? Preliminary report on the evaluation method, measures and data.
+\subsection*{The work's innovation/news value} 
+Why does someone want to read the finished work? And who are these people?
+\section*{Pilot Study}
+\subsection*{Description of the literature studies}
+What areas will the literature study focus on? How shall the necessary knowledge on background and state-of-the-art be obtained? What preliminarily important references have been identified?
+\section*{Conditions \& Schedule}
+List of the resources expected to be needed to solve the problem (unless the degree project involves investigating what equipment should be used). This can be technical equipment, but also experiment and interview subjects. For instance:
+\begin{itemize}
+\item hardware, my laptop
+\item software, R and latex
+\item people, test subjects and interviewees 
+\item perseverance, because it's tough to write a thesis
+\end{itemize}
+
+\subsection*{Defined limitations on what is to be done}
+So that it is clear what is not included in the degree project
+
+\subsection*{Collaboration with the principal} Describe the way in which the principal will be involved in the project and what the external supervisor has undertaken to do (e.g. in terms of discussion, implementation, report reading).
+
+\newpage
+\section*{Schedule}
+
+\definecolor{softgreen}{RGB}{63,171,63}
+\definecolor{darkgreen}{RGB}{0,88,0}
+\definecolor{maybegreen}{RGB}{213,240,127}
+\definecolor{gold}{RGB}{211, 204, 103}
+\definecolor{grey}{RGB}{175,175,175}
+
+\begin{flushleft}
+\begin{tikzpicture}[x=0.5cm, y=0.8cm]
+\begin{ganttchart}[milestone label font=\tiny, group label font=\tiny,
+title label font=\tiny,
+bar label font=\tiny,
+bar label node/.style={text width=3cm,align=right,font=\scriptsize\RaggedLeft,anchor=east},
+milestone label node/.style={text width=2cm,align=right,font=\scriptsize\RaggedLeft,anchor=east},
+group label node/.style={text width=3cm,align=right,font=\scriptsize\RaggedLeft,anchor=east}
+]{1}{27}
+  \gantttitle{Preliminary schedule for Name Nameson's thesis}{27} \\
+  \gantttitlelist{1,...,27}{1} \\
+  \ganttgroup[group/.append style={fill=black}]{Pre-study}{1}{7} \\
+  \ganttbar[progress=100,bar/.append style={fill=softgreen}]{Meet with supervisor, intro period at principal}{1}{1} \\
+  \ganttlinkedbar[progress=30,bar/.append style={fill=softgreen}]{Read relevant literature}{2}{5} \ganttnewline
+  \ganttmilestone{Present pre-study results for principal}{5} 
+  \ganttlink{elem2}{elem3}\\
+  \ganttbar{Write introduction/background}{7}{7} \\
+  \ganttmilestone{KTH Exam Week period 3}{6} \\
+   \ganttlink{elem3}{elem4}
+  \ganttgroup[group/.append style={fill=black}]{Practical work}{8}{19}\\
+  \ganttbar{Model development, recreating results}{8}{10} \\
+  \ganttbar{Data pre-processing}{11}{13} \\
+  \ganttbar{Iteratively train \& test model}{14}{19} \\
+  \ganttlink{elem7}{elem8}
+  \ganttlink{elem8}{elem9}
+  \ganttgroup[group/.append style={fill=black}]{Finalizing report / defense}{20}{26}\\
+  \ganttbar{Write discussion/conclusion}{20}{22} \\
+  \ganttbar{Prepare presentation / defense}{23}{24}\\
+  \ganttbar[bar/.append style={fill=grey}]{Productization \& Deployment (if time permits)}{25}{26} \\
+  \ganttbar[bar/.append style={fill=gold}]{Goal week to defend thesis}{27}{27}
+  \ganttnewline
+\end{ganttchart}
+\end{tikzpicture}
+\end{flushleft}
+
+\end{document}
